@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 321f0bc3172c98849988a4ed1c876ca0, type: 3}
+  m_Name: Knife Weapon Level 2
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6797322289377289185, guid: 345a0f8e70143f7409270e6c2ee9fdb3, type: 3}
+  damage: 5
+  speed: 15
+  cooldownDuration: 2
+  pierce: 1
+  level: 2
+  nextLevelPrefab: {fileID: 0}
+  icon: {fileID: -1702267172, guid: 0d7568731207d6d4a9c9ce561429babb, type: 3}
