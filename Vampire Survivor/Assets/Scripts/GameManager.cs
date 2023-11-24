@@ -20,8 +20,9 @@ public class GameManager : MonoBehaviour
     // Store the previous state of the game
     public GameState previousState;
 
-    [Header("UI")]
+    [Header("Screens")]
     public GameObject pauseScreen;
+    public GameObject resultsScreen;
 
     // Current stat displays
     public Text currentHealthDisplay;
@@ -30,6 +31,16 @@ public class GameManager : MonoBehaviour
     public Text currentMightDisplay;
     public Text currentProjectileSpeedDisplay;
     public Text currentMagnetDisplay;
+
+    [Header("Results Screen Display")]
+    public Image chosenCharacterImage;
+    public Text chosenCharacterName;
+    public Text levelReachedDisplay;
+    public List<Image> chosenWeaponsUI = new List<Image>(6);
+    public List<Image> chosenPassiveItemsUI = new List<Image>(6);
+
+    // Flag to check if the game is over
+    public bool isGameOver = false;
 
     void Awake()
     {
@@ -64,6 +75,13 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.GameOver:
                 // Code for the Game over state
+                if (!isGameOver)
+                {
+                    isGameOver = true;
+                    Time.timeScale = 0f; // Stop the game entirely
+                    Debug.Log("GAME IS OVER");
+                    DisplayResults();
+                }
                 break;
             default:
                 Debug.LogWarning("GAME STATE DOES NOT EXIST");
@@ -119,5 +137,70 @@ public class GameManager : MonoBehaviour
     void DisableScreens()
     {
         pauseScreen.SetActive(false);
+        resultsScreen.SetActive(false);
+    }
+
+    public void GameOver()
+    {
+        ChangeState(GameState.GameOver);
+    }
+
+    void DisplayResults()
+    {
+        resultsScreen.SetActive(true);
+    }
+
+    public void AssignChosenCharacterUI(CharacterScriptableObject chosenCharacterData)
+    {
+        chosenCharacterImage.sprite = chosenCharacterData.Icon;
+        chosenCharacterName.text = chosenCharacterData.name;
+    }
+
+    public void AssignLevelReachedUI(int levelReachedData)
+    {
+        levelReachedDisplay.text = levelReachedData.ToString();
+    }
+
+    public void AssignChosenWeaponsAndPassiveItemsUI(List<Image> chosenWeaponsData, List<Image> chosenPassiveItemsData)
+    {
+        if (chosenWeaponsData.Count != chosenWeaponsUI.Count || chosenPassiveItemsData.Count != chosenPassiveItemsUI.Count)
+        {
+            Debug.Log("Chosen weapons and passive items data lists have different lengths");
+            return;
+        }
+
+        // Assign chosen weapons data to chosenWeaponsUI
+        for (int i = 0; i < chosenWeaponsUI.Count; i++)
+        {
+            // Check that the sprite of the corresponding element in chosenWeaponsData is not null
+            if (chosenWeaponsData[i].sprite)
+            {
+                // Enable the corresponding element in chosenWeaponsUI and set its sprite to the corresponding sprite in chosenWeaponsData
+                chosenWeaponsUI[i].enabled = true;
+                chosenWeaponsUI[i].sprite = chosenWeaponsData[i].sprite;
+            }
+            else
+            {
+                // If sprite is null, disable the corresponding element in chosenWeaponsUI
+                chosenWeaponsUI[i].enabled = false;
+            }
+        }
+
+        // Assign chosen passive items data to chosenPassiveItemsUI
+        for (int i = 0; i < chosenPassiveItemsUI.Count; i++)
+        {
+            // Check that the sprite of the corresponding element in chosenWeaponsData is not null
+            if (chosenWeaponsData[i].sprite)
+            {
+                // Enable the corresponding element in chosenPassiveItemsUI and set its sprite to the corresponding sprite in chosenPassiveItemsData
+                chosenPassiveItemsUI[i].enabled = true;
+                chosenPassiveItemsUI[i].sprite = chosenPassiveItemsData[i].sprite;
+            }
+            else
+            {
+                // If sprite is null, disable the corresponding element in chosenPassiveItemsUI
+                chosenPassiveItemsUI[i].enabled = false;
+            }
+        }
     }
 }
