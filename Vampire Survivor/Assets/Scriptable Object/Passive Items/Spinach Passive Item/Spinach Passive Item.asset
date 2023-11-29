@@ -15,4 +15,6 @@ MonoBehaviour:
   multiplier: 100
   level: 1
   nextLevelPrefab: {fileID: 3992417163473918939, guid: bf2e5520400709548adb0079355022ec, type: 3}
+  name: Spinach
+  description: Increases characters might
   icon: {fileID: 1795425099, guid: 0d7568731207d6d4a9c9ce561429babb, type: 3}
