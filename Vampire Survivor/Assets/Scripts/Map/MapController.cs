@@ -107,7 +107,7 @@ public class MapController : MonoBehaviour
             else if (direction.x < -0.5f)
             {
                 // Also moving left
-                return direction.y > 0 ? "Left Up " : "Left Down";
+                return direction.y > 0 ? "Left Up" : "Left Down";
             }
             else
             {

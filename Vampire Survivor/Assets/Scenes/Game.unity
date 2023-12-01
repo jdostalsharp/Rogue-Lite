@@ -3031,17 +3031,13 @@ MonoBehaviour:
       enemyCount: 5
       spawnCount: 0
       enemyPrefab: {fileID: 8149106456896814473, guid: 6dd4fcbb22e3d9c44a3a1f104a1c6b3c, type: 3}
-    - enemyName: Red Bat
-      enemyCount: 2
-      spawnCount: 0
-      enemyPrefab: {fileID: 8149106456896814473, guid: 10b2e520155679a49b00a187bea36280, type: 3}
     waveQuota: 0
     spawnInterval: 1
     spawnCount: 0
   - waveName: Wave 2
     enemyGroups:
     - enemyName: Bat
-      enemyCount: 10
+      enemyCount: 6
       spawnCount: 0
       enemyPrefab: {fileID: 8149106456896814473, guid: 6dd4fcbb22e3d9c44a3a1f104a1c6b3c, type: 3}
     - enemyName: Red Bat
@@ -3049,7 +3045,7 @@ MonoBehaviour:
       spawnCount: 0
       enemyPrefab: {fileID: 8149106456896814473, guid: 10b2e520155679a49b00a187bea36280, type: 3}
     waveQuota: 0
-    spawnInterval: 0.1
+    spawnInterval: 0.5
     spawnCount: 0
   currentWaveCount: 0
   enemiesAlive: 0
@@ -3640,6 +3636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 571db234c575eeb479eafc91d3e8fc09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageEffect: {fileID: 5446482890710011068, guid: 074b1167c5c863f4aa9fde267fb22035, type: 3}
   experience: 0
   level: 1
   experienceCap: 0
@@ -3665,9 +3662,6 @@ MonoBehaviour:
   healthBar: {fileID: 2133567767}
   expBar: {fileID: 746805338}
   levelText: {fileID: 1931090357}
-  secondWeaponTest: {fileID: 5216167714743171133, guid: 23090715fde294e42a5ceaf5823f89e8, type: 3}
-  firstPassiveItemTest: {fileID: 3992417163473918939, guid: cb0e322d71fb71c4d90748fb2a4e0cc4, type: 3}
-  secondPassiveItemTest: {fileID: 6027701858857289946, guid: e691f5bceea9e79439b0113601a08cb5, type: 3}
 --- !u!114 &655382407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3741,6 +3735,8 @@ MonoBehaviour:
     upgradeDescriptionDisplay: {fileID: 1769894544}
     upgradeIcon: {fileID: 513973678}
     upgradeButton: {fileID: 538281153}
+  weaponEvolutions:
+  - {fileID: 11400000, guid: aabecaf62b2851742b14f0b80b206edc, type: 2}
 --- !u!1 &680211500
 GameObject:
   m_ObjectHideFlags: 0
@@ -6215,7 +6211,7 @@ MonoBehaviour:
   - {fileID: 898879225}
   - {fileID: 506595633}
   - {fileID: 248443587}
-  timeLimit: 75
+  timeLimit: 300
   stopWatchDisplay: {fileID: 1612140091}
   isGameOver: 0
   choosingUpgrade: 0
@@ -10512,3 +10508,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146714702}
   m_CullTransparentMesh: 1
+--- !u!1001 &8129501784585966968
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8129501785631936608, guid: fc8eba975e1f7784387fa43ef9e1ed42, type: 3}
+      propertyPath: m_Name
+      value: Treasure Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129501785631936612, guid: fc8eba975e1f7784387fa43ef9e1ed42, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129501785631936612, guid: fc8eba975e1f7784387fa43ef9e1ed42, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129501785631936612, guid: fc8eba975e1f7784387fa43ef9e1ed42, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129501785631936612, guid: fc8eba975e1f7784387fa43ef9e1ed42, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129501785631936612, guid: fc8eba975e1f7784387fa43ef9e1ed42, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129501785631936612, guid: fc8eba975e1f7784387fa43ef9e1ed42, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129501785631936612, guid: fc8eba975e1f7784387fa43ef9e1ed42, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129501785631936612, guid: fc8eba975e1f7784387fa43ef9e1ed42, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129501785631936612, guid: fc8eba975e1f7784387fa43ef9e1ed42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129501785631936612, guid: fc8eba975e1f7784387fa43ef9e1ed42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129501785631936612, guid: fc8eba975e1f7784387fa43ef9e1ed42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fc8eba975e1f7784387fa43ef9e1ed42, type: 3}

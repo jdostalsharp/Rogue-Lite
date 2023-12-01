@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf50f1f9acdbaf48bc3d08a6908f806, type: 3}
+  m_Name: Knife + Spinach
+  m_EditorClassIdentifier: 
+  baseWeaponData: {fileID: 11400000, guid: 3b20c2ce910f302419b94bb1693aa8c9, type: 2}
+  catalystPassiveItemData: {fileID: 11400000, guid: ae86da7384fcd654599526e81ac0a0f7, type: 2}
+  evolvedWeaponData: {fileID: 11400000, guid: 775c291fd58dac742aab7d67547fab43, type: 2}
+  evolvedWeapon: {fileID: 4843643116902268379, guid: 9ea8e05ea18a0b247aa70532638d3442, type: 3}
