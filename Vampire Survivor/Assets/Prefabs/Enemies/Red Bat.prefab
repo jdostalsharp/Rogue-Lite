@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -2702566667677365322}
   - component: {fileID: -1555840826488346604}
   - component: {fileID: 2123531284178858051}
+  - component: {fileID: 8083954400778594034}
   m_Layer: 0
   m_Name: Red Bat
   m_TagString: Enemy
@@ -134,7 +135,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8846385, y: 0.703356}
   m_EdgeRadius: 0
 --- !u!114 &-2702566667677365322
 MonoBehaviour:
@@ -184,3 +185,27 @@ MonoBehaviour:
   - name: Blue gem
     itemPrefab: {fileID: 995007200100951473, guid: 794b9e6e63ab70749a4ef2d055dac2a6, type: 3}
     dropRate: 90
+  - name: Treasure Chest
+    itemPrefab: {fileID: 8129501785631936608, guid: fc8eba975e1f7784387fa43ef9e1ed42, type: 3}
+    dropRate: 70
+--- !u!50 &8083954400778594034
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8149106456896814473}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
